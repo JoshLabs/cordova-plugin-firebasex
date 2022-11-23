@@ -36,7 +36,7 @@
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="application">
 			<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" />
-			<service android:name="org.apache.cordova.firebase.FirebasePluginMessagingService">
+			<service android:exported="false" android:name="org.apache.cordova.firebase.FirebasePluginMessagingService">
 				<intent-filter>
 					<action android:name="com.google.firebase.MESSAGING_EVENT"/>
 				</intent-filter>
@@ -62,7 +62,8 @@
 		<preference name="ANDROID_PLAY_SERVICES_TAGMANAGER_VERSION" default="17.0.0" />
 		<preference name="ANDROID_PLAY_SERVICES_AUTH_VERSION" default="18.1.0" />
 		<preference name="ANDROID_FIREBASE_ANALYTICS_VERSION" default="17.5.0" />
-		<preference name="ANDROID_FIREBASE_MESSAGING_VERSION" default="20.3.0" />
+		<preference name="ANDROID_FIREBASE_MESSAGING_VERSION" default="23.1.0" />
+		<preference name="ANDROID_FIREBASE_IID_VERSION" default="21.1.0" /> <!-- deprecated but required by firebase-messaging -->
 		<preference name="ANDROID_FIREBASE_CONFIG_VERSION" default="19.2.0" />
 		<preference name="ANDROID_FIREBASE_PERF_VERSION" default="19.0.9" />
 		<preference name="ANDROID_FIREBASE_AUTH_VERSION" default="19.4.0" />
@@ -77,6 +78,7 @@
 		<framework src="com.google.android.gms:play-services-auth:$ANDROID_PLAY_SERVICES_AUTH_VERSION" />
 		<framework src="com.google.firebase:firebase-analytics:$ANDROID_FIREBASE_ANALYTICS_VERSION" />
 		<framework src="com.google.firebase:firebase-messaging:$ANDROID_FIREBASE_MESSAGING_VERSION" />
+		<framework src="com.google.firebase:firebase-iid:$ANDROID_FIREBASE_IID_VERSION" /> <!-- deprecated but required by firebase-messaging -->
 		<framework src="com.google.firebase:firebase-config:$ANDROID_FIREBASE_CONFIG_VERSION" />
 		<framework src="com.google.firebase:firebase-perf:$ANDROID_FIREBASE_PERF_VERSION" />
 		<framework src="com.google.firebase:firebase-auth:$ANDROID_FIREBASE_AUTH_VERSION" />
